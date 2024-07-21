@@ -8,7 +8,9 @@ public class Options {
     private List<Option> options;
 
     public Options(List<Option> options) {
-        validateOptions(options);
+        if (!validateOptions(options)) {
+            throw new IllegalArgumentException("중복된 option 이름이 존재합니다.");
+        }
         this.options = new ArrayList<>(options);
     }
 
@@ -20,10 +22,11 @@ public class Options {
         return options.size() > 1;
     }
 
-    public static void validateOptions(List<Option> options) {
+    public static boolean validateOptions(List<Option> options) {
         if (options.stream().map(Option::getName).distinct().count() != options.size()) {
-            throw new IllegalArgumentException("중복된 option 이름이 존재합니다.");
+            return false;
         }
+        return true;
     }
 
     public Options merge(Options newOptions) {
@@ -37,7 +40,7 @@ public class Options {
             return true;
         }
         if (options.stream().anyMatch(o -> o.isSameName(name))) {
-            throw new IllegalArgumentException("중복된 option 이름이 존재합니다.");
+            return false;
         }
         return true;
     }

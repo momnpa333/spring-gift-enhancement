@@ -52,9 +52,10 @@ public class OptionService {
             .orElseThrow(() -> new NotFoundException("Option not found"));
         Options options = optionRepository.findAllByProductId(productId);
 
-        if (options.isUpdatePossible(option, command.name())) {
-            option.update(command.name(), command.quantity());
+        if (!options.isUpdatePossible(option, command.name())) {
+            throw new IllegalArgumentException("이미 존재하는 option 이름입니다.");
         }
+        option.update(command.name(), command.quantity());
 
         return OptionModel.Info.from(option);
     }
