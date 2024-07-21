@@ -39,7 +39,7 @@ public class Options {
         if (option.isSameName(name)) {
             return true;
         }
-        if (options.stream().anyMatch(o -> o.getName().equals(name))) {
+        if (options.stream().anyMatch(o -> o.isSameName(name))) {
             throw new IllegalArgumentException("중복된 option 이름이 존재합니다.");
         }
         return true;
