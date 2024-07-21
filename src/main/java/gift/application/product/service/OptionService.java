@@ -35,9 +35,7 @@ public class OptionService {
         var originOptions = optionRepository.findAllByProductId(productId);
 
         Options mergedOptions = options.merge(originOptions);
-
         optionRepository.saveAllByOptions(options);
-
         return mergedOptions.getOptions().stream().map(OptionModel.Info::from).toList();
     }
 
