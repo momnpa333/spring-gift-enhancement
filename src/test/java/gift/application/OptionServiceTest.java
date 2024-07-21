@@ -27,7 +27,6 @@ public class OptionServiceTest {
         // given
         int threadCount = 1000;
         ExecutorService excuterService = Executors.newFixedThreadPool(threadCount);
-        CountDownLatch countDownLatch = new CountDownLatch(threadCount);
         // when
 
         for (int i = 0; i < threadCount; i++) {
