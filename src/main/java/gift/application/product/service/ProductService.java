@@ -1,14 +1,12 @@
-package gift.service.product;
+package gift.application.product.service;
 
-import gift.controller.product.dto.ProductResponse;
-import gift.global.dto.PageResponse;
 import gift.model.product.Product;
 import gift.global.validate.NotFoundException;
 import gift.model.product.SearchType;
 import gift.repository.product.CategoryRepository;
 import gift.repository.product.ProductRepository;
-import gift.service.product.dto.ProductCommand;
-import gift.service.product.dto.ProductModel;
+import gift.application.product.dto.ProductCommand;
+import gift.application.product.dto.ProductModel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
