@@ -1,23 +1,25 @@
 package gift.controller.product;
 
+import gift.application.product.ProductFacade;
+import gift.application.product.dto.ProductModel.Info;
 import gift.controller.product.dto.ProductRequest;
 import gift.controller.product.dto.ProductResponse;
 import gift.global.auth.Authorization;
 import gift.global.dto.PageResponse;
 import gift.model.member.Role;
 import gift.model.product.SearchType;
-import gift.service.product.OptionService;
-import gift.service.product.ProductService;
-import gift.service.product.dto.OptionModel;
-import gift.service.product.dto.ProductModel;
+import gift.application.product.service.OptionService;
+import gift.application.product.service.ProductService;
+import gift.application.product.dto.OptionModel;
+import gift.application.product.dto.ProductModel;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.util.Pair;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,10 +34,13 @@ public class ProductController {
 
     private final ProductService productService;
     private final OptionService optionService;
+    private final ProductFacade productFacade;
 
-    public ProductController(ProductService productService, OptionService optionService) {
+    public ProductController(ProductService productService, OptionService optionService,
+        ProductFacade productFacade) {
         this.productService = productService;
         this.optionService = optionService;
+        this.productFacade = productFacade;
     }
 
     @GetMapping("/products/{id}")
@@ -53,10 +58,11 @@ public class ProductController {
     public ResponseEntity<ProductResponse.Info> createProduct(
         @RequestBody @Valid ProductRequest.Register request
     ) {
-        ProductModel.Info productModel = productService.createProduct(request.toProductCommand());
-        List<OptionModel.Info> optionModel = optionService.createOption(productModel.id(),
+        Pair<Info, List<OptionModel.Info>> models = productFacade.createProduct(
+            request.toProductCommand(),
             request.toOptionCommand());
-        ProductResponse.Info response = ProductResponse.Info.from(productModel, optionModel);
+        ProductResponse.Info response = ProductResponse.Info.from(models.getFirst(),
+            models.getSecond());
         return ResponseEntity.ok(response);
     }
 
@@ -67,10 +73,10 @@ public class ProductController {
         @PathVariable("id") Long id,
         @RequestBody @Valid ProductRequest.Update request
     ) {
-        ProductModel.Info productModel = productService.updateProduct(id,
+        Pair<Info, List<OptionModel.Info>> models = productFacade.updateProduct(id,
             request.toProductCommand());
-        List<OptionModel.Info> optionModel = optionService.getOptions(id);
-        ProductResponse.Info response = ProductResponse.Info.from(productModel, optionModel);
+        ProductResponse.Info response = ProductResponse.Info.from(models.getFirst(),
+            models.getSecond());
         return ResponseEntity.ok(response);
     }
 
