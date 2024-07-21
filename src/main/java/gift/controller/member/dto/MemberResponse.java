@@ -1,7 +1,6 @@
 package gift.controller.member.dto;
 
-import gift.model.member.Member;
-import gift.service.member.dto.MemberModel;
+import gift.application.member.dto.MemberModel;
 
 public class MemberResponse {
 

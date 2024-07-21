@@ -1,4 +1,4 @@
-package gift.service.wish.dto;
+package gift.application.wish.dto;
 
 import gift.model.wish.Wish;
 

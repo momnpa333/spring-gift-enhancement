@@ -1,6 +1,6 @@
 package gift.controller.product.dto;
 
-import gift.service.product.dto.CategoryModel;
+import gift.application.product.dto.CategoryModel;
 import java.util.List;
 
 public class CategoryResponse {

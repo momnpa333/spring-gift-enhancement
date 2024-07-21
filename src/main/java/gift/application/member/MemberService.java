@@ -1,13 +1,12 @@
-package gift.service.member;
+package gift.application.member;
 
-import gift.controller.member.dto.MemberResponse;
 import gift.global.auth.jwt.JwtProvider;
 import gift.model.member.Member;
 import gift.global.validate.InvalidAuthRequestException;
 import gift.global.validate.NotFoundException;
 import gift.repository.member.MemberRepository;
-import gift.service.member.dto.MemberCommand;
-import gift.service.member.dto.MemberModel;
+import gift.application.member.dto.MemberCommand;
+import gift.application.member.dto.MemberModel;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

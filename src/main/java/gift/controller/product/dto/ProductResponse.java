@@ -1,9 +1,7 @@
 package gift.controller.product.dto;
 
-import gift.controller.product.dto.OptionResponse.Info;
-import gift.model.product.Product;
-import gift.service.product.dto.OptionModel;
-import gift.service.product.dto.ProductModel;
+import gift.application.product.dto.OptionModel;
+import gift.application.product.dto.ProductModel;
 import java.util.List;
 
 public class ProductResponse {

@@ -1,7 +1,6 @@
 package gift.controller.wish.dto;
 
-import gift.model.wish.Wish;
-import gift.service.wish.dto.WishModel;
+import gift.application.wish.dto.WishModel;
 
 public class WishResponse {
 

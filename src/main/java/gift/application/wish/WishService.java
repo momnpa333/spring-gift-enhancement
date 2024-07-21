@@ -1,7 +1,5 @@
-package gift.service.wish;
+package gift.application.wish;
 
-import gift.controller.wish.dto.WishResponse;
-import gift.global.dto.PageResponse;
 import gift.model.member.Member;
 import gift.model.product.Product;
 import gift.model.wish.Wish;
@@ -10,8 +8,8 @@ import gift.repository.product.ProductRepository;
 import gift.repository.wish.WishJpaRepository;
 import gift.global.validate.NotFoundException;
 import gift.repository.wish.WishRepository;
-import gift.service.wish.dto.WishCommand;
-import gift.service.wish.dto.WishModel;
+import gift.application.wish.dto.WishCommand;
+import gift.application.wish.dto.WishModel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

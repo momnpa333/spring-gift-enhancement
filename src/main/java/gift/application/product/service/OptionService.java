@@ -1,4 +1,4 @@
-package gift.service.product;
+package gift.application.product.service;
 
 import gift.global.validate.NotFoundException;
 import gift.model.product.Option;
@@ -6,9 +6,9 @@ import gift.model.product.Options;
 import gift.model.product.Product;
 import gift.repository.product.OptionRepository;
 import gift.repository.product.ProductRepository;
-import gift.service.product.dto.OptionCommand;
-import gift.service.product.dto.OptionCommand.RegisterMany;
-import gift.service.product.dto.OptionModel;
+import gift.application.product.dto.OptionCommand;
+import gift.application.product.dto.OptionCommand.RegisterMany;
+import gift.application.product.dto.OptionModel;
 import java.util.List;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.retry.annotation.Backoff;

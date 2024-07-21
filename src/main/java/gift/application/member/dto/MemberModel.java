@@ -1,4 +1,4 @@
-package gift.service.member.dto;
+package gift.application.member.dto;
 
 import gift.model.member.Member;
 

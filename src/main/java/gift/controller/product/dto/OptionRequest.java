@@ -1,6 +1,6 @@
 package gift.controller.product.dto;
 
-import gift.service.product.dto.OptionCommand;
+import gift.application.product.dto.OptionCommand;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

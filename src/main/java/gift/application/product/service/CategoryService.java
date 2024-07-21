@@ -1,9 +1,9 @@
-package gift.service.product;
+package gift.application.product.service;
 
 import gift.global.validate.NotFoundException;
 import gift.repository.product.CategoryRepository;
-import gift.service.product.dto.CategoryCommand;
-import gift.service.product.dto.CategoryModel;
+import gift.application.product.dto.CategoryCommand;
+import gift.application.product.dto.CategoryModel;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

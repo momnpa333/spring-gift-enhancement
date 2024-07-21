@@ -1,6 +1,6 @@
 package gift.controller.product.dto;
 
-import gift.service.product.dto.CategoryCommand;
+import gift.application.product.dto.CategoryCommand;
 import jakarta.validation.constraints.NotBlank;
 
 public class CategoryRequest {

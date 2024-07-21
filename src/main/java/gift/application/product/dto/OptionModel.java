@@ -1,4 +1,4 @@
-package gift.service.product.dto;
+package gift.application.product.dto;
 
 import gift.model.product.Option;
 

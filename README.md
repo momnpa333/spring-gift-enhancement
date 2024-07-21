@@ -21,8 +21,8 @@ var option = optionRepository.findByProductId(productId).orElseThrow();
 option.subtract(quantity)
 ```
 
-- [ ] 상품 옵션의 수량을 지정된 숫자만큼 빼는 기능을 구현.
-- [ ] 상품 수량에 대해 동시성 구현
+- [x] 상품 옵션의 수량을 지정된 숫자만큼 빼는 기능을 구현.
+- [x] 상품 수량에 대해 동시성 구현
 
 ## step3로 넘어오면서 리팩토링 해야할 목록
 

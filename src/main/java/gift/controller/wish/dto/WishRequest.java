@@ -1,6 +1,6 @@
 package gift.controller.wish.dto;
 
-import gift.service.wish.dto.WishCommand;
+import gift.application.wish.dto.WishCommand;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 

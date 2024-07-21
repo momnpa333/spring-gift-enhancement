@@ -1,7 +1,7 @@
 package gift.controller.member.dto;
 
 import gift.model.member.Role;
-import gift.service.member.dto.MemberCommand;
+import gift.application.member.dto.MemberCommand;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 

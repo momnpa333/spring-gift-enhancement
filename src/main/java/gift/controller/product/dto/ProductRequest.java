@@ -2,8 +2,8 @@ package gift.controller.product.dto;
 
 
 import gift.controller.product.dto.OptionRequest.Info;
-import gift.service.product.dto.OptionCommand.RegisterMany;
-import gift.service.product.dto.ProductCommand;
+import gift.application.product.dto.OptionCommand.RegisterMany;
+import gift.application.product.dto.ProductCommand;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
