@@ -16,13 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class ProductFacade {
 
-    private final CategoryService categoryService;
     private final OptionService optionService;
     private final ProductService productService;
 
-    public ProductFacade(CategoryService categoryService, OptionService optionService,
+    public ProductFacade(OptionService optionService,
         ProductService productService) {
-        this.categoryService = categoryService;
         this.optionService = optionService;
         this.productService = productService;
     }
