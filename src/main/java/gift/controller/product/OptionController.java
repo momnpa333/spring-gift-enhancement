@@ -4,6 +4,8 @@ import gift.controller.product.dto.OptionRequest;
 import gift.controller.product.dto.OptionResponse;
 import gift.application.product.service.OptionService;
 import gift.application.product.dto.OptionModel;
+import gift.global.auth.Authorization;
+import gift.model.member.Role;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +35,7 @@ public class OptionController {
         return ResponseEntity.ok(response);
     }
 
+    @Authorization(role = Role.ADMIN)
     @PostMapping("/products/{id}/options")
     public ResponseEntity<OptionResponse.InfoList> createOption(
         @PathVariable("id") Long productId,
@@ -43,6 +46,7 @@ public class OptionController {
         return ResponseEntity.ok(response);
     }
 
+    @Authorization(role = Role.ADMIN)
     @PutMapping("/products/{productId}/options/{optionId}")
     public ResponseEntity<OptionResponse.Info> updateOption(
         @PathVariable("optionId") Long optionId,
@@ -55,6 +59,7 @@ public class OptionController {
         return ResponseEntity.ok(response);
     }
 
+    @Authorization(role = Role.ADMIN)
     @DeleteMapping("/products/{productId}/options/{optionId}")
     public ResponseEntity<String> deleteOption(
         @PathVariable("productId") Long productId,
