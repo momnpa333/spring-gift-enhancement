@@ -1,4 +1,4 @@
-package gift.service;
+package gift.application;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,9 +7,9 @@ import static org.mockito.BDDMockito.given;
 
 import gift.model.product.Category;
 import gift.repository.product.CategoryRepository;
-import gift.service.product.CategoryService;
-import gift.service.product.dto.CategoryCommand;
-import gift.service.product.dto.CategoryModel;
+import gift.application.product.service.CategoryService;
+import gift.application.product.dto.CategoryCommand;
+import gift.application.product.dto.CategoryModel;
 
 import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;

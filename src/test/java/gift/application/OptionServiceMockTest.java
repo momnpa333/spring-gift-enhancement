@@ -1,7 +1,7 @@
-package gift.service;
+package gift.application;
 
 import gift.repository.product.OptionRepository;
-import gift.service.product.OptionService;
+import gift.application.product.service.OptionService;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
